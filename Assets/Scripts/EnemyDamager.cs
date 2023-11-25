@@ -23,6 +23,7 @@ public class EnemyDamager : MonoBehaviour
         if(collision.tag == "Enemy")
         {
             collision.GetComponent<EnemyController>().TakeDamage(damageAmount);
+            Destroy(gameObject);
         }
     }
 }
