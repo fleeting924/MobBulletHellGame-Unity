@@ -15,6 +15,8 @@ public class EnemyController : MonoBehaviour
 
     public float health = 5f;
 
+    public int expToGive = 1;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -50,6 +52,8 @@ public class EnemyController : MonoBehaviour
         if(health <= 0)
         {
             Destroy(gameObject);
+
+            ExperienceLevelController.instance.SpawnExp(transform.position, expToGive);
         }
     }
 }
