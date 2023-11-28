@@ -5,6 +5,12 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public static PlayerController instance;
+    private void Awake()
+    {
+        instance = this;
+    }
+    
     public float moveSpeed;
 
     public Animator anim;
@@ -14,7 +20,7 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        moveSpeed = PlayerStatController.instance.moveSpeed[0].value;
     }
 
     // Update is called once per frame

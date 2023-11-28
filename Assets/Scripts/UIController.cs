@@ -18,6 +18,8 @@ public class UIController : MonoBehaviour
 
     public GameObject levelUpPanel;
 
+    public PlayerStatUpgradeDisplay attackPowerUpgradeDisplay, attackSpeedUpgradeDisplay, moveSpeedUpgradeDisplay, healthUpgradeDisplay;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -36,5 +38,33 @@ public class UIController : MonoBehaviour
         explvlSlider.value = currentExp;
 
         expLvlText.text = "Level: " + currentLvl;
+    }
+
+    public void LevelUpAttackPower()
+    {
+        PlayerStatController.instance.LevelUpAttackPower();
+        UIController.instance.levelUpPanel.SetActive(false);
+        Time.timeScale = 1f;
+    }
+
+    public void LevelUpAttackSpeed()
+    {
+        PlayerStatController.instance.LevelUpAttackSpeed();
+        UIController.instance.levelUpPanel.SetActive(false);
+        Time.timeScale = 1f;
+    }
+
+    public void LevelUpMoveSpeed()
+    {
+        PlayerStatController.instance.LevelUpMoveSpeed();
+        UIController.instance.levelUpPanel.SetActive(false);
+        Time.timeScale = 1f;
+    }
+
+    public void LevelUpHealth()
+    {
+        PlayerStatController.instance.LevelUpHealth();
+        UIController.instance.levelUpPanel.SetActive(false);
+        Time.timeScale = 1f;
     }
 }

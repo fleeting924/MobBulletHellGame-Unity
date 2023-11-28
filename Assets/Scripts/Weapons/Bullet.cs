@@ -4,6 +4,12 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
+    public static Bullet instance;
+    private void Awake()
+    {
+        instance = this;
+    }
+    
     [Range(1, 10)]
     [SerializeField] private float speed = 10f;
 

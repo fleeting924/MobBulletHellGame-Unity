@@ -61,8 +61,13 @@ public class ExperienceLevelController : MonoBehaviour
             currentLevel = expLevels.Count - 1;
         }
 
+        PlayerStatUpgradeDisplay display = new PlayerStatUpgradeDisplay();
+        display.sortButtons();
+
         UIController.instance.levelUpPanel.SetActive(true);
 
         Time.timeScale = 0f;
+
+        PlayerStatController.instance.UpdateDisplay();
     }
 }
